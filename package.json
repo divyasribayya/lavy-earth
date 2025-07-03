@@ -1,0 +1,27 @@
+{
+  "name": "food-landing-page-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "firebase": "^11.10.0",
+    "next": "^15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^4.11.0",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "babel-plugin-styled-components": "^2.1.4",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest"
+  }
+}

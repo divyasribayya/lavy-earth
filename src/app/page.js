@@ -1,0 +1,49 @@
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import Why from "@/components/Why";
+import Offer from "@/components/Offer";
+import ProductsList from "@/components/ProductsList";
+
+export default function Home() {
+  return (
+    <>
+		
+			<Hero />
+			<Offer />
+			<Services />
+			<Why 
+				img="image and card.png" 
+				title="WHY CHOOSE US" 
+				subTitle="Find Favorites And Discover New Ones" 
+				para="At vero eos et accusamus et iusto odio dignissimos ducimus blanditiis praesen voluptatum deleniti."
+				classes="md:flex-row" 
+				headColor="text-[#03a66b]" 
+				buttonClass="" 
+			/>
+			<ProductsList />
+			<Why 
+				img="image & card.png" 
+				title="HOME DELIVERY" 
+				subTitle="Sit At Home We Will Take Care Your Order" 
+				para="At vero eos et accusamus et iusto odio dignissimos ducimus blanditiis praesen voluptatum deleniti atque corrupti quos."
+				classes="md:flex-row-reverse" 
+				headColor="text-[#f9ba45]" 
+				buttonClass="" 
+				class2="lg:pr-24 md:pr-16"
+			/>
+			<Why 
+				img="mobile mockup.png" 
+				title="Download our app" 
+				subTitle="Get The Groceries App Order More Easily" 
+				para="At vero eos et accusamus et iusto odio dignissimos ducimus blanditiis praesen voluptatum deleniti atque corrupti quos."
+				classes="md:flex-row"
+				mainclass="bg-[#fef5f5]" 
+				headColor="text-[#f54748]" 
+				buttonClass="" 
+				class2="lg:pr-24 md:pr-16"
+				imageClass=""
+			/>
+
+		</>
+  )
+}
