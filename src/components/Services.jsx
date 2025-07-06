@@ -1,87 +1,42 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowRight } from "react-icons/fi";
 
-export default function AboutSection() {
+export default function ServicesSection() {
   return (
-    <section id="about" className="bg-[#f9f8f8] py-12">
+    <section id="about" className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Graphic Image */}
+          {/* Image Section */}
           <div className="flex justify-center">
             <Image
-              src="/img/about-bg.png"
-              alt="About background"
+              src="/about/spice.png" // Replace with your actual spices image path
+              alt="Spices Bowls"
               width={500}
-              height={500}
-              className="w-full h-auto object-cover"
+              height={350}
+              className="w-full h-auto object-cover rounded-lg "
             />
           </div>
 
           {/* Text Content */}
           <div className="text-center md:text-left">
-            <p className="text-[#7EB693] font-semibold text-sm uppercase tracking-wider mb-2">
-              About us
+            <p className="text-black font-bold text-lg mb-2 flex items-center gap-2 justify-center md:justify-start">
+              ABOUT US <span className="w-10 h-0.5 bg-gray-400 inline-block align-middle"></span>
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#274c5b] mb-4">
-              We Believe in Working Accredited Farmers
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#FFA800] mb-4">
+              Global Spices Exporter & Supplier
             </h2>
-            <p className="text-[#525C60] mb-6">
-              Simply dummy text of the printing and typesetting industry.
-              Lorem had ceased to been the industry's standard dummy text ever
-              since the 1500s, when an unknown printer took a galley.
+            <p className="text-black font-bold mb-2">
+              Spices Pvt. Ltd.
+              <span className="font-normal"> Is A Leading Manufacturer, Exporter And Supplier Of SPICES AND OIL SEEDS Such As CUMIN SEEDS, SESAME SEEDS, FENNEL SEEDS, PEANUTS, And GROUNDNUTS Etc.</span>
             </p>
-
-            {/* About Boxes */}
-            <div className="flex flex-col gap-6 my-8">
-              {/* Box 1 */}
-              <div className="flex items-center gap-6">
-                <Image
-                  src="/img/Vegan-icon.png"
-                  alt="Vegan Icon"
-                  width={50}
-                  height={50}
-                  className="bg-white p-2 rounded-md"
-                />
-                <div>
-                  <h3 className="text-xl font-extrabold text-[#274c5b]">
-                    Organic Foods Only
-                  </h3>
-                  <p className="text-[#525C60]">
-                    Simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum
-                  </p>
-                </div>
-              </div>
-
-              {/* Box 2 */}
-              <div className="flex items-center gap-6">
-                <Image
-                  src="/img/Mailbox-icon.png"
-                  alt="Mailbox Icon"
-                  width={50}
-                  height={50}
-                  className="bg-white p-2 rounded-md"
-                />
-                <div>
-                  <h3 className="text-xl font-extrabold text-[#274c5b]">
-                    Quality Standards
-                  </h3>
-                  <p className="text-[#525C60]">
-                    Simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Button */}
+            <p className="text-black mb-6">
+              Based In The Spice City Of India - UNJHA, We At Sheth Overseas Directly Procure Spices And Oil Seeds From Farmer And Process At Our Manufacturing Unit, Which Results Into Pure And Clean Quality Of Final Products. We Always Deliver More Than Expected.
+            </p>
             <Link
               href="#"
-              className="inline-flex items-center gap-2 bg-[#274c5b] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#3d6a7c] transition"
+              className="inline-block bg-[#FFA800] text-white px-10 py-4 rounded-md font-semibold text-lg shadow-md hover:bg-[#e09c00] transition"
             >
-              Shop Now
-              <FiArrowRight className="w-4 h-4" />
+              KNOW MORE
             </Link>
           </div>
         </div>

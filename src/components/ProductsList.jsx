@@ -5,92 +5,75 @@ import { products } from "../data/products";
 import { useState } from "react";
 import { FaStar, FaArrowDown } from "react-icons/fa";
 
-export default function ProductsList() {
-  const [visibleCount, setVisibleCount] = useState(4);
+const categories = [
+  "Blended",
+  "Ground",
+  
+];
 
-  const loadMore = () => {
-    setVisibleCount((prev) => prev + 4);
-  };
+export default function ProductsList() {
+  const [selectedCategory, setSelectedCategory] = useState("Blended");
+  const [selectedProduct, setSelectedProduct] = useState(products[1]?.id || null); // Default to Sesame Seeds as in screenshot
 
   return (
-    <section id="product" className="py-16">
+    <section id="product" className="py-16 bg-[#FFFCF5]">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Title */}
-        <div className="text-center mb-8">
-          <p className="text-[#7EB693] text-sm font-semibold uppercase mb-2">Categories</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#274c5b]">Our Products</h2>
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex flex-col items-start">
+            <span className="text-sm font-bold tracking-wide text-[#222] mb-1 flex items-center gap-2">
+              PRODUCTS
+              <span className="block w-8 h-0.5 bg-[#222] mt-1" />
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#F9B233] mb-2">
+              Our Products <span className="text-[#222]">Here..</span>
+            </h2>
+          </div>
+        </div>
+        {/* Category Tabs */}
+        <div className="flex gap-8 mb-10 border-b border-[#F9B233]/30">
+          {categories.map((cat, idx) => (
+            <button
+              key={cat + idx}
+              className={`pb-2 text-lg font-semibold transition-colors ${
+                selectedCategory === cat
+                  ? "text-[#222] border-b-2 border-[#F9B233]"
+                  : "text-[#bbb] border-b-2 border-transparent hover:text-[#F9B233]"
+              }`}
+              onClick={() => setSelectedCategory(cat)}
+              type="button"
+            >
+              {cat}
+            </button>
+          ))}
         </div>
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-10">
-          {products.slice(0, visibleCount).map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {products.slice(0, 8).map((product) => (
             <div
               key={product.id}
-              className="bg-[#F9F8F8] p-4 rounded-lg shadow hover:shadow-lg transition-all"
+              className={`bg-white p-6 rounded-lg shadow-sm flex flex-col items-center cursor-pointer transition-all border-2 ${
+                selectedProduct === product.id
+                  ? "border-[#F9B233]"
+                  : "border-transparent hover:border-[#F9B233]/60"
+              }`}
+              onClick={() => setSelectedProduct(product.id)}
             >
-              {/* Tag */}
-              <span className="inline-block bg-[#7EB693] text-white text-xs px-2 py-1 rounded-md mb-3">
-                {product.tag}
-              </span>
-              {/* Image */}
-              <div className="flex justify-center mb-3">
+              <div className="mb-4 w-full flex justify-center">
                 <Image
                   src={product.image}
                   alt={product.name}
-                  width={190}
-                  height={190}
-                  className="object-cover rounded-md"
+                  width={180}
+                  height={180}
+                  className="object-contain"
                 />
               </div>
-              {/* Product Name */}
-              <p className="text-[#274c5b] font-semibold text-lg mb-2 text-center md:text-left">
+              <p className={`text-lg font-medium text-center mt-2 ${selectedProduct === product.id ? "text-[#F9B233]" : "text-[#222]"}`}>
                 {product.name}
               </p>
-              {/* Detail Section */}
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between border-t border-[#E5E5E5] pt-3 gap-3">
-                {/* Prices */}
-                <div className="flex gap-2">
-                  <p className="text-gray-400 line-through text-sm font-semibold">
-                    {product.discount}
-                  </p>
-                  <p className="text-[#274c5b] font-bold text-base">
-                    {product.price}
-                  </p>
-                </div>
-                {/* Rating */}
-                <div className="flex space-x-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <FaStar
-                      key={star}
-                      className={star <= product.rating ? "text-orange-400" : "text-gray-300"}
-                      size={16}
-                    />
-                  ))}
-                </div>
-              </div>
-              {/* Button */}
-              <div className="mt-4 text-center">
-                <Link
-                  href="#"
-                  className="inline-block bg-[#274c5b] text-white px-4 py-2 rounded-md hover:bg-[#3d6a7c] transition text-sm font-medium"
-                >
-                  Add to cart
-                </Link>
-              </div>
             </div>
           ))}
         </div>
-        {/* Load More Button */}
-        {visibleCount < products.length && (
-          <div className="text-center">
-            <button
-              onClick={loadMore}
-              className="inline-flex items-center gap-2 bg-[#274c5b] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#3d6a7c] transition"
-            >
-              Load More
-              <FaArrowDown size={16} />
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );

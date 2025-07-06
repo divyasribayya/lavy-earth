@@ -1,99 +1,63 @@
 "use client";
-import styled from "styled-components";
 import Image from "next/image";
-
-const Wrapper = styled.section`
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-  background: #f4f2f3;
-  border-radius: 1rem;
-`;
-
-const Title = styled.h2`
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #64766a;
-  margin-bottom: 1rem;
-`;
-
-const Paragraph = styled.p`
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #94a7ae;
-  margin-bottom: 2rem;
-`;
 
 export default function ContactSection() {
   return (
-    <>
-      {/* Banner Section */}
-      <div className="w-full h-64 md:h-80 flex items-center justify-center bg-cover bg-center mb-12" style={{ backgroundImage: 'url(/contact-page/Banner.png)' }}>
-        <h2 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg">Contact</h2>
-      </div>
-      <section className="max-w-7xl mx-auto py-16 px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div className="min-h-screen flex items-center justify-center bg-white py-12 px-4">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Left Side: Info */}
-        <div>
-          <div className="mb-2 text-[#94a7ae] font-semibold tracking-widest uppercase text-sm">Get Started</div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#10403C] leading-tight mb-4">
-            Secure Your Coverage<br />
-            Today with <span className="text-[#94a7ae]">lavy earth foods </span>
-          </h1>
-          <div className="mt-10">
-            <h2 className="text-2xl font-semibold mb-6 text-[#10403C]">Contact Info</h2>
-            <div className="flex items-start gap-4 mb-6">
-              <span className="bg-[#94a7ae] rounded-lg p-3 flex items-center justify-center">
-                <Image src="/img/Vegan-icon.png" alt="Phone" width={32} height={32} />
-              </span>
-              <div>
-                <div className="font-bold text-[#10403C]">Phone Number</div>
-                <div className="text-[#222]">+91 9515075499</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 mb-6">
-              <span className="bg-[#94a7ae] rounded-lg p-3 flex items-center justify-center">
-                <Image src="/img/icon.png" alt="Address" width={32} height={32} />
-              </span>
-              <div>
-                <div className="font-bold text-[#10403C]">Address</div>
-                <div className="text-[#222] max-w-xs">P. Gannavaram, L. Gannavaram Village,
-                East Godavari District, Andhra Pradesh - 533240.</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="bg-[#94a7ae] rounded-lg p-3 flex items-center justify-center">
-                <Image src="/img/Mailbox-icon.png" alt="Email" width={32} height={32} />
-              </span>
-              <div>
-                <div className="font-bold text-[#10403C]">Email</div>
-                <div className="text-[#222]">lavyearthfoods@gmail.com</div>
-              </div>
-            </div>
+        <div className="">
+          <h2 className="text-4xl font-bold text-[#FFA800] mb-4">Get in Touch</h2>
+          <p className="text-base text-black mb-8 max-w-md">
+            Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.
+          </p>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="bg-[#FFF3E1] rounded-full p-4 flex items-center justify-center">
+              <Image src="/contact-page/call-icon.svg" alt="Phone" width={32} height={32} />
+            </span>
+            <span className="text-lg text-black">+91 99999 99999</span>
+          </div>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="bg-[#FFF3E1] rounded-full p-4 flex items-center justify-center">
+              <Image src="/contact-page/contact-icon.svg" alt="Email" width={32} height={32} />
+            </span>
+            <span className="text-lg text-black">info@info.com.au</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="bg-[#FFF3E1] rounded-full p-4 flex items-center justify-center">
+              <Image src="/contact-page/locqation-Icon.png" alt="Location" width={32} height={32} />
+            </span>
+            <span className="text-lg text-black">
+              Near, Block &quot;E&quot; , Shop No. 448 Sumel 11, BAPS Cir,<br />
+              Shahibag, Ahmedabad, Gujarat 380004
+            </span>
           </div>
         </div>
         {/* Right Side: Form */}
-        <div>
-          <form className="bg-[#FEE7DF] rounded-2xl shadow p-8 w-full max-w-lg ml-auto">
-            <div className="mb-4">
-              <label className="block font-semibold mb-1 text-[#10403C]" htmlFor="name">Your Name</label>
-              <input id="name" name="name" type="text" placeholder="Enter your name" className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#94a7ae]" />
+        <div className="">
+          <form className="bg-white rounded-xl shadow-lg p-8 w-full max-w-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label className="block text-[#FFA800] font-semibold mb-1" htmlFor="firstName">First Name</label>
+                <input id="firstName" name="firstName" type="text" placeholder="Enter First Name" className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFA800] placeholder-gray-400" />
+              </div>
+              <div>
+                <label className="block text-[#FFA800] font-semibold mb-1" htmlFor="lastName">Last Name</label>
+                <input id="lastName" name="lastName" type="text" placeholder="Enter Last Name" className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFA800] placeholder-gray-400" />
+              </div>
             </div>
             <div className="mb-4">
-              <label className="block font-semibold mb-1 text-[#10403C]" htmlFor="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="Enter your email" className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#94a7ae]" />
-            </div>
-            <div className="mb-4">
-              <label className="block font-semibold mb-1 text-[#10403C]" htmlFor="phone">Phone Number</label>
-              <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#94a7ae]" />
+              <label className="block text-[#FFA800] font-semibold mb-1" htmlFor="email">Email Address</label>
+              <input id="email" name="email" type="email" placeholder="Enter Email Address" className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFA800] placeholder-gray-400" />
             </div>
             <div className="mb-6">
-              <label className="block font-semibold mb-1 text-[#10403C]" htmlFor="message">Your Message</label>
-              <textarea id="message" name="message" rows={4} placeholder="Enter your message" className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#94a7ae] resize-none" />
+              <label className="block text-[#FFA800] font-semibold mb-1" htmlFor="message">Message..</label>
+              <textarea id="message" name="message" rows={5} placeholder="Type Your Message" className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFA800] placeholder-gray-400 resize-none" />
             </div>
-            <button type="submit" className="bg-[#94a7ae] text-white font-semibold px-8 py-2 rounded-full text-lg hover:bg-[#d94e1f] transition">Send Message</button>
+            <button type="submit" className="w-full bg-[#FFA800] text-white font-semibold py-4 rounded shadow text-lg hover:bg-[#e69500] transition">Send Message..</button>
           </form>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

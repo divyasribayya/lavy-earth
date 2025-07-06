@@ -26,7 +26,7 @@ export default function About() {
         </div>
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-dark mb-2">Lavy Earth Constructions</h2>
-          <p className="mb-2">Lavy Earth Constructions is a mechanical construction division that specializes in designing, building, and maintaining industrial infrastructure. Our mission is to deliver innovative and efficient construction solutions that meet our clients' needs.</p>
+          <p className="mb-2">Lavy Earth Constructions is a mechanical construction division that specializes in designing, building, and maintaining industrial infrastructure. Our mission is to deliver innovative and efficient construction solutions that meet our clients needs.</p>
           <ul className="list-disc pl-6 mb-2">
             <li>Our Services: We offer a range of mechanical construction services, including design, fabrication, installation, and maintenance.</li>
             <li>Our Expertise: Our team of experienced professionals has expertise in handling complex construction projects.</li>
